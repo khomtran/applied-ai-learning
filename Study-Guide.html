@@ -500,6 +500,94 @@
     .term-pill.t2 { background: rgba(168, 85, 247, 0.15); color: var(--purple); border: 1px solid rgba(168, 85, 247, 0.3); }
     .term-pill.t3 { background: rgba(16, 185, 129, 0.15); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
 
+    /* Weekly Breakdown inside Month Cards */
+    .week-breakdown-box {
+      margin-top: 14px;
+      background: rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .week-breakdown-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .week-item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .week-item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      padding: 7px 10px;
+      transition: all 0.2s ease;
+    }
+    .week-item-row:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(6, 182, 212, 0.35);
+    }
+    .week-item-row.completed {
+      background: rgba(16, 185, 129, 0.08);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+    .week-item-row.completed .week-item-name {
+      color: var(--emerald);
+      text-decoration: line-through;
+    }
+    .week-cb-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .week-cb-label input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--emerald);
+      cursor: pointer;
+    }
+    .week-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: rgba(6, 182, 212, 0.12);
+      color: var(--cyan);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .week-text-col {
+      flex: 1;
+      min-width: 0;
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+    .week-item-name {
+      font-weight: 600;
+      color: #f1f5f9;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .week-item-desc {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      display: block;
+    }
+
     .deliverable-box {
       margin-top: 14px;
       padding: 12px 14px;
@@ -959,6 +1047,57 @@
               • <strong>[#827] Common-Sense Guide to DSA:</strong> Ch 1 &amp; 3 only (Array memory model &amp; Big-O notation)<br>
               • <strong>[#1524] Pandas Workout:</strong> 5 targeted drills only (Ex 1, 2, 8, 15, 29)
             </div>
+
+            <!-- Weekly Breakdown -->
+            <div class="week-breakdown-box">
+              <div class="week-breakdown-title">
+                <span>🗓️ Month 1 Weekly Breakdown</span>
+                <span id="month-1-week-status">0/4 Weeks</span>
+              </div>
+              <div class="week-item-list">
+                <div class="week-item-row" id="week-row-1">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-1" onchange="toggleWeek(1, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 1</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Environment Setup &amp; The Git Loop (~18 pages)</span>
+                    <span class="week-item-desc">Set up <code>.venv</code>, VS Code, Jupyter. Master 3-step Git loop (add, commit, push). Read [#1397] Ch 1–2.</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-2">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-2" onchange="toggleWeek(2, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 2</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Vectorized Computing with NumPy (~42 pages)</span>
+                    <span class="week-item-desc">Array slicing, vector broadcasting, eliminating loops. Read [#1397] Ch 4–6, 8. Practice matrix operations.</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-3">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-3" onchange="toggleWeek(3, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 3</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Data Wrangling with Pandas (~36 pages + 5 targeted drills)</span>
+                    <span class="week-item-desc">Series, DataFrames, <code>.loc</code>/<code>.iloc</code>, grouping. Read [#1397] Ch 13–14, 18. Solve 5 drills in [#1524] (Ex 1, 2, 8, 15, 29).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-4">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-4" onchange="toggleWeek(4, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 4</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Computational Efficiency &amp; Milestone 1 (~31 pages)</span>
+                    <span class="week-item-desc">Read [#827] Ch 1 &amp; 3 (Big-O notation). Ship <strong>Milestone 1 Deliverable</strong> in <code>milestones/m01-numpy-eda/</code>.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="deliverable-box">
               <strong>Milestone 1 Deliverable:</strong> Clean, transform, and analyze a complex multi-table Kaggle dataset with Pandas and Matplotlib in <code>milestones/m01-numpy-eda/</code>.
             </div>
@@ -986,6 +1125,57 @@
               • <strong>[#377] Mathematics of Machine Learning:</strong> Ch 1 (Vectors in practice, p. 55–65), Ch 6 (Eigenvalues, p. 219–226), Ch 16–17 (Gradient descent, p. 477–516)<br>
               • <em>Skip: Abstract topology, abstract vector space axioms, and QR algorithms</em>
             </div>
+
+            <!-- Weekly Breakdown -->
+            <div class="week-breakdown-box">
+              <div class="week-breakdown-title">
+                <span>🗓️ Month 2 Weekly Breakdown</span>
+                <span id="month-2-week-status">0/4 Weeks</span>
+              </div>
+              <div class="week-item-list">
+                <div class="week-item-row" id="week-row-5">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-5" onchange="toggleWeek(5, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 5</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Linear Algebra &amp; Vector Geometry (~26 pages)</span>
+                    <span class="week-item-desc">Dot products, projections, vector angles, and covariance. Read [#720] Ch 2 &amp; [#377] Ch 1 (p. 55–65).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-6">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-6" onchange="toggleWeek(6, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 6</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Matrix Decompositions &amp; Eigenvalues (PCA) (~28 pages)</span>
+                    <span class="week-item-desc">Geometric intuition of SVD and PCA orthogonal basis transformation. Read [#720] Ch 6 &amp; [#377] Ch 6 (p. 219–226). Code PCA in NumPy.</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-7">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-7" onchange="toggleWeek(7, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 7</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Multivariable Calculus &amp; Gradient Vectors (~30 pages)</span>
+                    <span class="week-item-desc">Loss functions (MSE), partial derivatives, gradients, and chain rule. Read [#720] Ch 3–4 &amp; [#377] Ch 16 (p. 477–492).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-8">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-8" onchange="toggleWeek(8, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 8</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Optimization from Scratch &amp; Milestone 2 (~24 pages)</span>
+                    <span class="week-item-desc">Read [#377] Ch 17 (p. 503–516) &amp; [#720] Ch 4. Ship <strong>Milestone 2 Deliverable</strong> in <code>milestones/m02-gradient-descent-scratch/</code>.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="deliverable-box">
               <strong>Milestone 2 Deliverable:</strong> Pure NumPy implementation of Batch &amp; Stochastic Gradient Descent in <code>milestones/m02-gradient-descent-scratch/</code> with 3D loss surface plots.
             </div>
@@ -1013,6 +1203,57 @@
               • <strong>[#1579] Streamlit for Data Science:</strong> Ch 1 (Widgets &amp; layout) &amp; Ch 4 (Deploying ML models with Streamlit UI)<br>
               • <em>Skip: Géron deep math derivations, polynomial math, and advanced cloud hosting</em>
             </div>
+
+            <!-- Weekly Breakdown -->
+            <div class="week-breakdown-box">
+              <div class="week-breakdown-title">
+                <span>🗓️ Month 3 Weekly Breakdown</span>
+                <span id="month-3-week-status">0/4 Weeks</span>
+              </div>
+              <div class="week-item-list">
+                <div class="week-item-row" id="week-row-9">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-9" onchange="toggleWeek(9, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 9</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Linear Models &amp; Regularization (~32 pages)</span>
+                    <span class="week-item-desc">OLS, Normal Equation, Ridge ($L_2$) and Lasso ($L_1$) regularization intuition. Read [#1025] Ch 1 &amp; Ch 4 (p. 246–265).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-10">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-10" onchange="toggleWeek(10, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 10</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Decision Trees, Random Forests &amp; Ensembles (~30 pages)</span>
+                    <span class="week-item-desc">Gini impurity vs Entropy, Bagging, Random Forests, and XGBoost. Read [#1025] Ch 5 (p. 308–320), Ch 6, Ch 7 (p. 362–378).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-11">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-11" onchange="toggleWeek(11, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 11</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Validation Discipline &amp; Leak-Free Pipelines (~35 pages)</span>
+                    <span class="week-item-desc">Build Scikit-Learn <code>Pipeline</code> &amp; <code>ColumnTransformer</code> to prevent data snooping. Read [#1025] Ch 2 (p. 130–155) &amp; Ch 3 (p. 190–210).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-12">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-12" onchange="toggleWeek(12, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 12</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Term 1 Capstone &amp; Milestone 3 (~28 pages)</span>
+                    <span class="week-item-desc">Read [#1579] Ch 1 &amp; Ch 4. Ship <strong>Milestone 3 Deliverable</strong> (Streamlit interactive GUI) in <code>milestones/m03-scikit-pipeline/</code>.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="deliverable-box">
               <strong>Milestone 3 Deliverable:</strong> Full predictive classifier with stratified k-fold tuning and an interactive Streamlit UI in <code>milestones/m03-scikit-pipeline/</code>.
             </div>
@@ -1040,6 +1281,57 @@
               • <strong>[#1434] AI and ML for Coders in PyTorch:</strong> Ch 1 (PyTorch tensors &amp; autograd), Ch 2 (<code>nn.Module</code> &amp; standard training loop), Ch 4 (<code>DataLoader</code>)<br>
               • <em>Focus: PyTorch syntax with Chollet's visual computational graph mental models</em>
             </div>
+
+            <!-- Weekly Breakdown -->
+            <div class="week-breakdown-box">
+              <div class="week-breakdown-title">
+                <span>🗓️ Month 4 Weekly Breakdown</span>
+                <span id="month-4-week-status">0/4 Weeks</span>
+              </div>
+              <div class="week-item-list">
+                <div class="week-item-row" id="week-row-13">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-13" onchange="toggleWeek(13, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 13</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Perceptrons &amp; Backpropagation Theory (~30 pages)</span>
+                    <span class="week-item-desc">Tensors, forward pass, computational graphs, and loss surfaces. Read [#1053] Ch 2 (p. 16–45). Hand-derive scalar chain rule for 2-layer MLP.</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-14">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-14" onchange="toggleWeek(14, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 14</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">PyTorch Tensors, CUDA &amp; Autograd (~26 pages)</span>
+                    <span class="week-item-desc">Tensor shapes, device placement (<code>.to(device)</code>), autograd graphs, and <code>DataLoader</code>. Read [#1434] Ch 1 &amp; Ch 4.</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-15">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-15" onchange="toggleWeek(15, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 15</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Training Loops, Losses &amp; Optimizers (~28 pages)</span>
+                    <span class="week-item-desc">Generalization, overfitting, dropout, and weight regularization. Read [#1053] Ch 5 (p. 136–160) &amp; [#1434] Ch 2 (<code>nn.Module</code> loop).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-16">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-16" onchange="toggleWeek(16, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 16</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Custom PyTorch Architecture &amp; Milestone 4 (~18 pages)</span>
+                    <span class="week-item-desc">Hyperparameter tuning, learning rate schedulers, early stopping. Read [#1053] Ch 5.3–5.4. Ship <strong>Milestone 4 Deliverable</strong> in <code>milestones/m04-pytorch-mlp/</code>.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="deliverable-box">
               <strong>Milestone 4 Deliverable:</strong> Custom PyTorch MLP in <code>milestones/m04-pytorch-mlp/</code> with custom DataLoader and TensorBoard loss curves.
             </div>
@@ -1067,6 +1359,57 @@
               • <strong>[#1434] AI and ML for Coders in PyTorch:</strong> Ch 3 (Conv2d layers) &amp; Ch 4 (Data augmentation transforms)<br>
               • <em>Skip: YOLO object detection and segmentation masks (focus strictly on classification transfer learning)</em>
             </div>
+
+            <!-- Weekly Breakdown -->
+            <div class="week-breakdown-box">
+              <div class="week-breakdown-title">
+                <span>🗓️ Month 5 Weekly Breakdown</span>
+                <span id="month-5-week-status">0/4 Weeks</span>
+              </div>
+              <div class="week-item-list">
+                <div class="week-item-row" id="week-row-17">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-17" onchange="toggleWeek(17, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 17</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Convolutions &amp; Spatial Feature Hierarchies (~26 pages)</span>
+                    <span class="week-item-desc">Why ConvNets beat MLPs for images, convolution operations, kernels/strides, pooling. Read [#1053] Ch 8 (p. 231–255) &amp; [#1434] Ch 3.</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-18">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-18" onchange="toggleWeek(18, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 18</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Modern CNN Backbones &amp; Residual Connections (~24 pages)</span>
+                    <span class="week-item-desc">Modularity, ResNet skip connections, batch normalisation, preventing vanishing gradients. Read [#1053] Ch 9 (p. 268–283).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-19">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-19" onchange="toggleWeek(19, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 19</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Transfer Learning &amp; Data Augmentation (~28 pages)</span>
+                    <span class="week-item-desc">Freezing pretrained weights, replacing classification heads, <code>torchvision.transforms</code>. Read [#1053] Ch 8.3 (p. 256–267) &amp; [#1434] Ch 4.</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-20">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-20" onchange="toggleWeek(20, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 20</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Vision Capstone &amp; Milestone 5 (~16 pages)</span>
+                    <span class="week-item-desc">Interpreting ConvNets and visualising Grad-CAM heatmaps. Read [#1053] Ch 10 (p. 299–305). Ship <strong>Milestone 5 Deliverable</strong> in <code>milestones/m05-vision-transfer-learning/</code>.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="deliverable-box">
               <strong>Milestone 5 Deliverable:</strong> Transfer learning classifier with ResNet/EfficientNet on custom imagery in <code>milestones/m05-vision-transfer-learning/</code>.
             </div>
@@ -1095,6 +1438,57 @@
               • <strong>[#1025] Hands-On Machine Learning:</strong> Ch 14 (Dense vector embeddings &amp; cosine similarity)<br>
               • <em>Skip: Legacy RNNs, LSTMs, and GRUs (modern AI uses Transformers)</em>
             </div>
+
+            <!-- Weekly Breakdown -->
+            <div class="week-breakdown-box">
+              <div class="week-breakdown-title">
+                <span>🗓️ Month 6 Weekly Breakdown</span>
+                <span id="month-6-week-status">0/4 Weeks</span>
+              </div>
+              <div class="week-item-list">
+                <div class="week-item-row" id="week-row-21">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-21" onchange="toggleWeek(21, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 21</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Text Preprocessing &amp; Subword Tokenization (~25 pages)</span>
+                    <span class="week-item-desc">Text vectorization, vocabulary indexing, Byte-Pair Encoding (BPE), and WordPiece. Read [#1053] Ch 14 (p. 381–405).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-22">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-22" onchange="toggleWeek(22, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 22</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Word &amp; Sentence Embeddings (~28 pages)</span>
+                    <span class="week-item-desc">High-dimensional semantic embeddings, cosine similarity, semantic search. Read [#1025] Ch 14 (p. 885–905). Practice with <code>sentence-transformers</code>.</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-23">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-23" onchange="toggleWeek(23, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 23</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">The Transformer Architecture &amp; Self-Attention (~32 pages)</span>
+                    <span class="week-item-desc">Scaled Dot-Product Attention $\text{softmax}(QK^T / \sqrt{d_k})V$, multi-head attention, positional encodings. Read [#1053] Ch 15 (p. 421–445) &amp; [#1787] Ch 2.</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-24">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-24" onchange="toggleWeek(24, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 24</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Term 2 Capstone &amp; Milestone 6 (~15 pages)</span>
+                    <span class="week-item-desc">Classification with pretrained Transformer encoders. Read [#1053] Ch 15.4 (p. 454–465). Ship <strong>Milestone 6 Deliverable</strong> in <code>milestones/m06-transformer-embeddings/</code>.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="deliverable-box">
               <strong>Milestone 6 Deliverable:</strong> Multi-head self-attention module built from scratch in PyTorch in <code>milestones/m06-transformer-embeddings/</code>.
             </div>
@@ -1122,6 +1516,57 @@
               • <strong>[#1787] An Illustrated Guide to AI Agents:</strong> Ch 4 (Long-Term Memory &amp; RAG architecture) &amp; Ch 7 (Agent evaluators)<br>
               • <em>Skip: Pre-training infrastructure clusters and raw GPU cluster orchestration</em>
             </div>
+
+            <!-- Weekly Breakdown -->
+            <div class="week-breakdown-box">
+              <div class="week-breakdown-title">
+                <span>🗓️ Month 7 Weekly Breakdown</span>
+                <span id="month-7-week-status">0/4 Weeks</span>
+              </div>
+              <div class="week-item-list">
+                <div class="week-item-row" id="week-row-25">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-25" onchange="toggleWeek(25, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 25</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">The Modern AI Engineering Stack (~26 pages)</span>
+                    <span class="week-item-desc">Foundation model lifecycle, prompting vs fine-tuning vs RAG, token economics, latency. Read [#980] Ch 1 (p. 33–55).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-26">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-26" onchange="toggleWeek(26, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 26</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Vector Databases &amp; Chunking Strategies (~32 pages)</span>
+                    <span class="week-item-desc">Recursive character chunking, embedding generation, ChromaDB vector indexing. Read [#980] Ch 6 (p. 540–575) &amp; [#1787] Ch 4.</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-27">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-27" onchange="toggleWeek(27, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 27</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Advanced RAG Patterns &amp; Hybrid Search (~30 pages)</span>
+                    <span class="week-item-desc">Dense vector + BM25 keyword hybrid search, cross-encoder rerankers, contextual compression. Read [#980] Ch 6 (p. 576–605).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-28">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-28" onchange="toggleWeek(28, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 28</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">RAG Evaluation &amp; Milestone 7 (~28 pages)</span>
+                    <span class="week-item-desc">Automated evaluation: Faithfulness, Answer Relevancy, Context Recall, LLM-as-a-judge. Read [#980] Ch 4 (p. 339–365) &amp; [#1787] Ch 7. Ship <strong>Milestone 7 Deliverable</strong> in <code>milestones/m07-rag-vector-search/</code>.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="deliverable-box">
               <strong>Milestone 7 Deliverable:</strong> End-to-end RAG question-answering assistant over custom documents in <code>milestones/m07-rag-vector-search/</code> with faithfulness tests.
             </div>
@@ -1149,6 +1594,57 @@
               • <strong>[#1784] Build a Reasoning Model (From Scratch):</strong> Ch 1 (Understanding reasoning models) &amp; Ch 4 (Inference-time scaling &amp; self-refinement)<br>
               • <em>Skip: Pre-training reasoning models with Reinforcement Learning / GRPO from scratch</em>
             </div>
+
+            <!-- Weekly Breakdown -->
+            <div class="week-breakdown-box">
+              <div class="week-breakdown-title">
+                <span>🗓️ Month 8 Weekly Breakdown</span>
+                <span id="month-8-week-status">0/4 Weeks</span>
+              </div>
+              <div class="week-item-list">
+                <div class="week-item-row" id="week-row-29">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-29" onchange="toggleWeek(29, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 29</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Agentic Foundations &amp; The ReAct Loop (~30 pages)</span>
+                    <span class="week-item-desc">The Reason &rarr; Act &rarr; Observe cycle, task decomposition, action sequencing. Read [#1787] Ch 1 &amp; Ch 6. Code a minimal ReAct loop.</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-30">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-30" onchange="toggleWeek(30, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 30</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Function Calling &amp; Tool Integration (~28 pages)</span>
+                    <span class="week-item-desc">Structured JSON schema tool calling, execution sandboxing, Model Context Protocol (MCP) overview. Read [#1787] Ch 5.</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-31">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-31" onchange="toggleWeek(31, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 31</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Reasoning Tokens &amp; Advanced Prompting (~32 pages)</span>
+                    <span class="week-item-desc">Inference-time scaling, <code>&lt;think&gt;</code> reasoning tokens, Best-of-N sampling, self-consistency. Read [#1784] Ch 1 (p. 25–41), Ch 4 (p. 118–145) &amp; [#1787] Ch 3.</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-32">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-32" onchange="toggleWeek(32, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 32</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Autonomous Research Agent &amp; Milestone 8 (~22 pages)</span>
+                    <span class="week-item-desc">Reflection, Self-Refine, Reflexion loops, trajectory evaluations. Read [#1787] Ch 6. Ship <strong>Milestone 8 Deliverable</strong> in <code>milestones/m08-autonomous-agent/</code>.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="deliverable-box">
               <strong>Milestone 8 Deliverable:</strong> Multi-tool research agent capable of querying external web search APIs and writing structured syntheses in <code>milestones/m08-autonomous-agent/</code>.
             </div>
@@ -1176,6 +1672,57 @@
               • <strong>Production MLOps Engineering:</strong> Multi-stage Docker packaging, compose orchestration, FastAPI endpoints, and Mermaid system architecture diagrams<br>
               • <em>Focus: 80% practical shipping, testing, and cloud deployment of your Capstone</em>
             </div>
+
+            <!-- Weekly Breakdown -->
+            <div class="week-breakdown-box">
+              <div class="week-breakdown-title">
+                <span>🗓️ Month 9 Weekly Breakdown</span>
+                <span id="month-9-week-status">0/4 Weeks</span>
+              </div>
+              <div class="week-item-list">
+                <div class="week-item-row" id="week-row-33">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-33" onchange="toggleWeek(33, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 33</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Microservices &amp; API Design (~24 pages)</span>
+                    <span class="week-item-desc">SSE streaming responses, asynchronous endpoints, Pydantic validation schemas. Read [#980] Ch 9 (p. 851–875).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-34">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-34" onchange="toggleWeek(34, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 34</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Containerization with Docker (~20 pages)</span>
+                    <span class="week-item-desc">Multi-stage <code>Dockerfile</code>, <code>compose.yaml</code>, volume mounts, environment secrets, health checks. Read [#980] Ch 10 (p. 940–965).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-35">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-35" onchange="toggleWeek(35, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 35</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Portfolio Polish &amp; Technical Writing (~15 pages)</span>
+                    <span class="week-item-desc">Document project architecture with Mermaid diagrams in README.md; one-command reproducibility (<code>docker compose up -d</code>).</span>
+                  </div>
+                </div>
+                <div class="week-item-row" id="week-row-36">
+                  <label class="week-cb-label">
+                    <input type="checkbox" id="week-cb-36" onchange="toggleWeek(36, this.checked)">
+                  </label>
+                  <span class="week-tag">Week 36</span>
+                  <div class="week-text-col">
+                    <span class="week-item-name">Final Capstone Cloud Deployment &amp; Milestone 9</span>
+                    <span class="week-item-desc">Deploy the complete applied AI microservice live to the cloud or Hugging Face Spaces in <code>milestones/m09-production-capstone/</code>. Milestone 9 delivered! 🚀</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="deliverable-box">
               <strong>Milestone 9 Deliverable:</strong> Fully containerized, reproducible full-stack AI service live in <code>milestones/m09-production-capstone/</code>.
             </div>
@@ -1891,7 +2438,7 @@
     }
 
     function resetChecklist() {
-      if (confirm("Reset all study progress (both monthly milestones and weekly checklist)?")) {
+      if (confirm("Reset all study progress (including all 36 weeks, 9 monthly milestones, and checklist)?")) {
         savedState = {};
         localStorage.removeItem(storageKey);
         checklistContainer.querySelectorAll('input[type="checkbox"]').forEach(cb => {
@@ -1910,39 +2457,98 @@
           if (card) card.classList.remove('month-completed');
           const pill = document.getElementById(`month-pill-${m}`);
           if (pill) pill.classList.remove('completed');
+          const statusEl = document.getElementById(`month-${m}-week-status`);
+          if (statusEl) statusEl.innerText = '0/4 Weeks';
         }
-        updateMonthProgress();
+
+        savedWeekState = {};
+        localStorage.removeItem(weekStorageKey);
+        for (let w = 1; w <= 36; w++) {
+          const wCb = document.getElementById(`week-cb-${w}`);
+          if (wCb) wCb.checked = false;
+          const row = document.getElementById(`week-row-${w}`);
+          if (row) row.classList.remove('completed');
+        }
+
+        updateOverallProgress();
       }
     }
 
     function exportChecklistMarkdown() {
-      let md = "### Applied AI 9-Month Progress\n\n";
-      md += "#### Monthly Milestone Status:\n";
+      let md = "### Applied AI 36-Week Curriculum Progress\n\n";
       for (let m = 1; m <= 9; m++) {
-        const isDone = !!savedMonthState[m];
-        md += `- [${isDone ? 'x' : ' '}] Month ${m}\n`;
+        const mDone = !!savedMonthState[m];
+        md += `\n#### Month ${m} [${mDone ? 'x' : ' '}]\n`;
+        const startW = (m - 1) * 4 + 1;
+        const endW = m * 4;
+        for (let w = startW; w <= endW; w++) {
+          const wDone = !!savedWeekState[w];
+          const row = document.getElementById(`week-row-${w}`);
+          const name = row ? row.querySelector('.week-item-name').innerText : `Week ${w}`;
+          md += `- [${wDone ? 'x' : ' '}] **Week ${w}:** ${name}\n`;
+        }
       }
-      md += "\n#### Weekly Action Checklist:\n";
-      checkItems.forEach((text, idx) => {
-        const isDone = !!savedState[idx];
-        md += `- [${isDone ? 'x' : ' '}] ${text}\n`;
-      });
       navigator.clipboard.writeText(md).then(() => {
-        alert("Copied GitHub Markdown checklist to clipboard! You can paste this directly into your repository README.md or Study-Guide.md.");
+        alert("Copied full 36-week GitHub Markdown checklist to clipboard! You can paste this directly into your repository README.md or Study-Guide.md.");
       });
     }
 
     /* ==========================================================
-       6. INTERACTIVE MONTH PROGRESS TRACKER
+       6. INTERACTIVE MONTH & WEEK PROGRESS TRACKER
        ========================================================== */
     const monthStorageKey = 'applied_ai_study_months_v1';
+    const weekStorageKey = 'applied_ai_study_weeks_v1';
     let savedMonthState = {};
+    let savedWeekState = {};
 
     try {
       savedMonthState = JSON.parse(localStorage.getItem(monthStorageKey) || '{}');
     } catch (e) { savedMonthState = {}; }
 
-    function toggleMonth(monthNum, isChecked) {
+    try {
+      savedWeekState = JSON.parse(localStorage.getItem(weekStorageKey) || '{}');
+    } catch (e) { savedWeekState = {}; }
+
+    function toggleWeek(weekNum, isChecked, skipMonthCheck) {
+      if (isChecked) {
+        savedWeekState[weekNum] = true;
+      } else {
+        delete savedWeekState[weekNum];
+      }
+      try {
+        localStorage.setItem(weekStorageKey, JSON.stringify(savedWeekState));
+      } catch (e) {}
+
+      // Update week checkbox & row visual
+      const cb = document.getElementById(`week-cb-${weekNum}`);
+      if (cb) cb.checked = isChecked;
+
+      const row = document.getElementById(`week-row-${weekNum}`);
+      if (row) {
+        if (isChecked) row.classList.add('completed');
+        else row.classList.remove('completed');
+      }
+
+      const monthNum = Math.ceil(weekNum / 4);
+      const startW = (monthNum - 1) * 4 + 1;
+      const endW = monthNum * 4;
+      let monthDoneCount = 0;
+      for (let w = startW; w <= endW; w++) {
+        if (savedWeekState[w]) monthDoneCount++;
+      }
+
+      const statusEl = document.getElementById(`month-${monthNum}-week-status`);
+      if (statusEl) statusEl.innerText = `${monthDoneCount}/4 Weeks`;
+
+      if (!skipMonthCheck) {
+        const isMonthFullyDone = (monthDoneCount === 4);
+        toggleMonth(monthNum, isMonthFullyDone, true);
+      }
+
+      updateOverallProgress();
+    }
+
+    function toggleMonth(monthNum, isChecked, fromWeeks) {
       if (isChecked) {
         savedMonthState[monthNum] = true;
       } else {
@@ -1974,7 +2580,18 @@
         else pill.classList.remove('completed');
       }
 
-      updateMonthProgress();
+      // Cascade to weeks if clicked directly from month checkbox
+      if (!fromWeeks) {
+        const startW = (monthNum - 1) * 4 + 1;
+        const endW = monthNum * 4;
+        for (let w = startW; w <= endW; w++) {
+          toggleWeek(w, isChecked, true);
+        }
+        const statusEl = document.getElementById(`month-${monthNum}-week-status`);
+        if (statusEl) statusEl.innerText = isChecked ? '4/4 Weeks' : '0/4 Weeks';
+      }
+
+      updateOverallProgress();
     }
 
     function handlePillClick(monthNum, event) {
@@ -1992,44 +2609,74 @@
       }
     }
 
-    function updateMonthProgress() {
-      let completed = 0;
+    function updateOverallProgress() {
+      let completedMonths = 0;
       for (let m = 1; m <= 9; m++) {
-        if (savedMonthState[m]) completed++;
+        if (savedMonthState[m]) completedMonths++;
       }
-      const pct = Math.round((completed / 9) * 100);
+      let completedWeeks = 0;
+      for (let w = 1; w <= 36; w++) {
+        if (savedWeekState[w]) completedWeeks++;
+      }
+
+      const monthPct = Math.round((completedMonths / 9) * 100);
+      const weekPct = Math.round((completedWeeks / 36) * 100);
+
       const textEl = document.getElementById('monthProgressText');
-      if (textEl) textEl.innerText = `${completed} of 9 Months Completed (${pct}%)`;
+      if (textEl) {
+        textEl.innerText = `${completedMonths} of 9 Months (${monthPct}%) • ${completedWeeks} of 36 Weeks (${weekPct}%)`;
+      }
 
       const barEl = document.getElementById('monthProgressBar');
-      if (barEl) barEl.style.width = pct + '%';
+      if (barEl) barEl.style.width = weekPct + '%';
 
       const badgeEl = document.getElementById('monthReadinessBadge');
       if (badgeEl) {
-        if (completed === 0) badgeEl.innerText = "Term 1 Foundations & Classical ML";
-        else if (completed <= 3) badgeEl.innerText = "Term 1: Foundations Complete";
-        else if (completed <= 6) badgeEl.innerText = "Term 2: Deep Learning Mastered";
-        else if (completed < 9) badgeEl.innerText = "Term 3: Agents & RAG In Progress";
-        else badgeEl.innerText = "🚀 9-Month Full Curriculum Mastered!";
+        if (completedWeeks < 12) badgeEl.innerText = "Term 1 Foundations & Classical ML";
+        else if (completedWeeks < 24) badgeEl.innerText = "Term 2 Deep Learning Mastered";
+        else if (completedWeeks < 36) badgeEl.innerText = "Term 3 Autonomous AI Engineering";
+        else badgeEl.innerText = "🚀 36-Week Curriculum Mastered!";
       }
     }
 
-    function initMonthProgress() {
+    function initProgress() {
+      // Init weeks
+      for (let w = 1; w <= 36; w++) {
+        const isDone = !!savedWeekState[w];
+        const cb = document.getElementById(`week-cb-${w}`);
+        if (cb) cb.checked = isDone;
+        const row = document.getElementById(`week-row-${w}`);
+        if (row && isDone) row.classList.add('completed');
+      }
+
+      // Init month week status counters
       for (let m = 1; m <= 9; m++) {
-        const isDone = !!savedMonthState[m];
+        const startW = (m - 1) * 4 + 1;
+        const endW = m * 4;
+        let done = 0;
+        for (let w = startW; w <= endW; w++) {
+          if (savedWeekState[w]) done++;
+        }
+        const statusEl = document.getElementById(`month-${m}-week-status`);
+        if (statusEl) statusEl.innerText = `${done}/4 Weeks`;
+
+        const isMonthDone = !!savedMonthState[m] || (done === 4);
+        if (isMonthDone) savedMonthState[m] = true;
+
         const timelineCb = document.getElementById(`timeline-check-${m}`);
-        if (timelineCb) timelineCb.checked = isDone;
+        if (timelineCb) timelineCb.checked = isMonthDone;
 
         const pillCb = document.getElementById(`pill-cb-${m}`);
-        if (pillCb) pillCb.checked = isDone;
+        if (pillCb) pillCb.checked = isMonthDone;
 
         const card = document.getElementById(`month-card-${m}`);
-        if (card && isDone) card.classList.add('month-completed');
+        if (card && isMonthDone) card.classList.add('month-completed');
 
         const pill = document.getElementById(`month-pill-${m}`);
-        if (pill && isDone) pill.classList.add('completed');
+        if (pill && isMonthDone) pill.classList.add('completed');
       }
-      updateMonthProgress();
+
+      updateOverallProgress();
     }
 
     window.addEventListener('resize', () => {
@@ -2038,7 +2685,7 @@
     });
 
     updateProgress();
-    initMonthProgress();
+    initProgress();
   </script>
 </body>
 </html>
