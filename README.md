@@ -1,9 +1,13 @@
 # Applied Artificial Intelligence: 9-Month University Study Guide & Progress Tracker
 
+> [!TIP]
+> 🎨 **Interactive Animated Study Guide Available:**  
+> Students can use the interactive HTML version of this guide by opening [**`Study-Guide.html`**](./Study-Guide.html) in any web browser! It features modern CSS animations, interactive progress tracking, dynamic filtering for book catalogs, and responsive checklists as a richer visual alternative to this Markdown document.
+
 > **Target Audience:** Undergraduate students studying Applied AI, Data Science, or Machine Learning Engineering.  
 > **Duration:** 9 Months (36 Weeks — 3 Academic Terms).  
-> **Interactive Local Library:** Books cross-referenced with your local **Calibre-Web** instance (Port `8083`).  
-> **Calibre-Web Direct Search:** Every book title below includes its exact **Calibre `#ID`** (e.g. `[#1025] Hands-On Machine Learning...`) so you can search directly by number or full name in Calibre-Web (`http://<server-ip>:8083` or direct URL `http://<server-ip>:8083/book/<id>`).  
+> **Calibre-Web Access:** Connect to your local library instance at [**`http://192.168.1.250:8083`**](http://192.168.1.250:8083).  
+> **Calibre-Web Direct Search:** Every book title below includes its exact **Calibre `#ID`** (e.g. `[#1025] Hands-On Machine Learning...`) so you can search directly by number or full name in Calibre-Web (`http://192.168.1.250:8083` or direct URL `http://192.168.1.250:8083/book/<id>`).  
 > **GitHub Native:** Uses GitHub-flavoured markdown task lists (`- [ ]`). Tick off tasks as you learn, commit, and push your progress directly to GitHub.
 
 ---
@@ -93,22 +97,22 @@ __pycache__/
 
 ## 2. Master Book Index (Calibre `#ID` & Exact Titles)
 
-All internal books are hosted in Calibre-Web at `http://<server-ip>:8083`. You can find any book instantly by typing its **#ID number** into the Calibre-Web search bar or navigating directly to `http://<server-ip>:8083/book/<id>`.
+All internal books are hosted in Calibre-Web at [**`http://192.168.1.250:8083`**](http://192.168.1.250:8083). You can find any book instantly by typing its **#ID number** into the Calibre-Web search bar or navigating directly to `http://192.168.1.250:8083/book/<id>`.
 
 | Calibre Search ID | Exact Book Title in Calibre-Web | Author(s) | Primary Domain | Direct Local Link |
 | :---: | :--- | :--- | :--- | :---: |
-| **#1397** | *Python Data Science Handbook* | Jake VanderPlas | NumPy, Pandas, Matplotlib | [Open #1397](http://localhost:8083/book/1397) |
-| **#1524** | *Pandas Workout* | Reuven Lerner | Data Wrangling Drills | [Open #1524](http://localhost:8083/book/1524) |
-| **#827** | *A Common-Sense Guide to Data Structures and Algorithms in Python, Volume 1* | Jay Wengrow | Computational Big-O | [Open #827](http://localhost:8083/book/827) |
-| **#720** | *Essential Math for AI* | Hala Nelson | Linear Algebra & Calculus | [Open #720](http://localhost:8083/book/720) |
-| **#377** | *Mathematics of Machine Learning: Master Linear Algebra, Calculus, and Probability* | Tivadar Danka | ML Math & Optimization | [Open #377](http://localhost:8083/book/377) |
-| **#1025** | *Hands-On Machine Learning with Scikit-Learn and PyTorch* | Aurélien Géron | Classical ML & Pipelines | [Open #1025](http://localhost:8083/book/1025) |
-| **#1053** | *Deep Learning With Python, Third Edition* | Watson & Chollet | Deep Learning & Keras 3 | [Open #1053](http://localhost:8083/book/1053) |
-| **#1434** | *AI and ML for Coders in Pytorch* | Laurence Moroney | PyTorch Vision & NLP | [Open #1434](http://localhost:8083/book/1434) |
-| **#980** | *AI Engineering: Building Applications With Foundation Models* | Chip Huyen | Modern GenAI & RAG | [Open #980](http://localhost:8083/book/980) |
-| **#1787** | *An Illustrated Guide to AI Agents* | Grootendorst & Alammar | Agents & Planning | [Open #1787](http://localhost:8083/book/1787) |
-| **#1784** | *Build a Reasoning Model (From Scratch)* | Sebastian Raschka | Reasoning Models & LLMs | [Open #1784](http://localhost:8083/book/1784) |
-| **#1579** | *Streamlit for Data Science* | Tyler Richards | Rapid UI Prototyping | [Open #1579](http://localhost:8083/book/1579) |
+| **#1397** | *Python Data Science Handbook* | Jake VanderPlas | NumPy, Pandas, Matplotlib | [Open #1397](http://192.168.1.250:8083/book/1397) |
+| **#1524** | *Pandas Workout* | Reuven Lerner | Data Wrangling Drills | [Open #1524](http://192.168.1.250:8083/book/1524) |
+| **#827** | *A Common-Sense Guide to Data Structures and Algorithms in Python, Volume 1* | Jay Wengrow | Computational Big-O | [Open #827](http://192.168.1.250:8083/book/827) |
+| **#720** | *Essential Math for AI* | Hala Nelson | Linear Algebra & Calculus | [Open #720](http://192.168.1.250:8083/book/720) |
+| **#377** | *Mathematics of Machine Learning: Master Linear Algebra, Calculus, and Probability* | Tivadar Danka | ML Math & Optimization | [Open #377](http://192.168.1.250:8083/book/377) |
+| **#1025** | *Hands-On Machine Learning with Scikit-Learn and PyTorch* | Aurélien Géron | Classical ML & Pipelines | [Open #1025](http://192.168.1.250:8083/book/1025) |
+| **#1053** | *Deep Learning With Python, Third Edition* | Watson & Chollet | Deep Learning & Keras 3 | [Open #1053](http://192.168.1.250:8083/book/1053) |
+| **#1434** | *AI and ML for Coders in Pytorch* | Laurence Moroney | PyTorch Vision & NLP | [Open #1434](http://192.168.1.250:8083/book/1434) |
+| **#980** | *AI Engineering: Building Applications With Foundation Models* | Chip Huyen | Modern GenAI & RAG | [Open #980](http://192.168.1.250:8083/book/980) |
+| **#1787** | *An Illustrated Guide to AI Agents* | Grootendorst & Alammar | Agents & Planning | [Open #1787](http://192.168.1.250:8083/book/1787) |
+| **#1784** | *Build a Reasoning Model (From Scratch)* | Sebastian Raschka | Reasoning Models & LLMs | [Open #1784](http://192.168.1.250:8083/book/1784) |
+| **#1579** | *Streamlit for Data Science* | Tyler Richards | Rapid UI Prototyping | [Open #1579](http://192.168.1.250:8083/book/1579) |
 | **External** | *Mathematics for Machine Learning* | Deisenroth et al. | Cambridge University Press | [mml-book.com](https://mml-book.com) |
 | **External** | *An Intro to Statistical Learning (ISLP)* | James, Witten et al. | Springer (Free Online) | [statlearning.com](https://www.statlearning.com) |
 | **External** | *Build a Large Language Model (From Scratch)* | Sebastian Raschka | Manning (2024) | [manning.com](https://www.manning.com) |
