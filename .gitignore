@@ -1,0 +1,32 @@
+# Virtual environments & Python cache
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Datasets (GitHub rejects files >100MB; keep datasets local or on cloud storage)
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.sqlite
+*.db
+
+# Model weights & large checkpoints (push code to Git, host large weights on Hugging Face / S3)
+*.pt
+*.pth
+*.onnx
+*.bin
+*.safetensors
+*.ckpt
+*.h5
+
+# Sensitive environment variables & API keys (NEVER commit secrets to GitHub)
+.env
+.env.local
+.env.*.local
+
+# Operating system junk
+.DS_Store
+Thumbs.db

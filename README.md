@@ -79,18 +79,51 @@ applied-ai-study/
     └── m09-production-capstone/
 ```
 
-### Essential `.gitignore`
+### Essential `.gitignore` (What It Is & Where To Put It)
+
+> [!NOTE]
+> **What is `.gitignore` for?**  
+> It is a configuration file that tells Git which files or folders to **never** track, commit, or upload to GitHub.  
+> In Applied AI, models (`.pt`, `.bin`) and datasets (`.csv`, `.parquet`) can easily reach gigabytes in size, but GitHub strictly blocks any file larger than **100 MB**. Additionally, virtual environments (`.venv/`) contain thousands of third-party files, and `.env` files contain secret API keys. `.gitignore` ensures only your clean source code and notes are pushed.
+>
+> **Where do you put it?**  
+> Create a file named exactly **`.gitignore`** (starting with a period, with no extension like `.txt`) and place it directly in the **root folder** of your repository (the top-level folder, right next to `README.md`).
+
+Below is the recommended `.gitignore` template for this 9-month study guide:
 
 ```gitignore
+# Virtual environments & Python cache
 .venv/
+venv/
+env/
 __pycache__/
+*.pyc
+
+# Datasets (GitHub rejects files >100MB; store raw datasets locally)
 *.csv
+*.tsv
 *.parquet
+*.feather
+*.sqlite
+*.db
+
+# Model weights & checkpoints (host large model files on Hugging Face or cloud storage)
 *.pt
 *.pth
 *.onnx
 *.bin
+*.safetensors
+*.ckpt
+*.h5
+
+# Sensitive environment variables & API keys (NEVER commit secrets to GitHub)
 .env
+.env.local
+.env.*.local
+
+# Operating system junk
+.DS_Store
+Thumbs.db
 ```
 
 ---
